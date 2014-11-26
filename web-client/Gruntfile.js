@@ -32,28 +32,27 @@ module.exports = function (grunt) {
     // Define configuration depending on environment.
     ngconstant: {
       options: {
-        space: '  '
-      },
-      development: [{
+        space: '  ',
         dest: '<%= yeoman.app %>/scripts/appConfig.js',
+        name: 'AppConfig'
+
+      },
+      development: {
         wrap: '\'use strict\';\n\n<%= __ngModule %>',
-        name: 'AppConfig',
         constants: {
           ENV: 'development',
           API_HOST: 'localhost:3000',
           GA_TRACKING_ID: 'UA-XXXXXXXX-X'
         }
-      }],
-      production: [{
-        dest: '<%= yeoman.app %>/scripts/appConfig.js',
+      },
+      production: {
         wrap: '\'use strict\';\n\n<%= __ngModule %>',
-        name: 'AppConfig',
         constants: {
           ENV: 'production',
           API_HOST: 'api.manshar.com',
           GA_TRACKING_ID: 'UA-47379030-1'
         }
-      }]
+      }
     },
 
     // Project settings
